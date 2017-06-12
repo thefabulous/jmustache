@@ -16,6 +16,7 @@ import java.util.Map;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
+import junit.framework.TestCase;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -25,10 +26,8 @@ import static org.junit.Assert.fail;
  * Unit tests that can be shared between GWT and the JVM. Put GWT-only tests in
  * {@code GwtTestMustache.java} and JVM-only tests in {@code MustacheTest.java}.
  */
-public abstract class SharedTests extends GWTTestCase
+public abstract class SharedTests extends TestCase
 {
-    @Override public String getModuleName () { return null; }
-
     @Test public void testSimpleVariable () {
         test("bar", "{{foo}}", context("foo", "bar"));
     }
