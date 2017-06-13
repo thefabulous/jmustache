@@ -85,6 +85,8 @@
         <configuration>
           <source>${source.level}</source>
           <target>${source.level}</target>
+          <testSource>${test.level}</testSource>
+          <testTarget>${test.level}</testTarget>
           <fork>true</fork>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
@@ -97,20 +99,6 @@
             <exclude>**/super/**</exclude>
           </excludes>
         </configuration>
-        <executions>
-          <execution>
-            <id>test-compile</id>
-            <phase>process-test-sources</phase>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <fork>true</fork>
-              <source>${test.level}</source>
-              <target>${test.level}</target>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
 
       <plugin>
