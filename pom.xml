@@ -46,7 +46,8 @@
   </prerequisites>
 
   <properties>
-    <source.level>1.8</source.level>
+    <source.level>1.7</source.level>
+    <test.level>1.8</test.level>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <gwt.version>2.8.0</gwt.version>
     <gwt.maven.version>2.8.0</gwt.maven.version>
@@ -96,6 +97,20 @@
             <exclude>**/super/**</exclude>
           </excludes>
         </configuration>
+        <executions>
+          <execution>
+            <id>test-compile</id>
+            <phase>process-test-sources</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <fork>true</fork>
+              <source>${test.level}</source>
+              <target>${test.level}</target>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
